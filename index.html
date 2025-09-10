@@ -1714,8 +1714,10 @@ button {
         <div class=
         "name animate__animated animate__fadeInDownBig animate__slow">
              <script>
-    // Ambil fragment/hash dari URL, misalnya: https://contoh.com#Wawan
-    const nama = window.location.hash.replace('#', '');
+    // Ambil hash dari URL dan hilangkan tanda #
+    const rawHash = window.location.hash.substring(1);
+    // Decode supaya %20 atau + jadi spasi
+    const nama = rawHash ? decodeURIComponent(rawHash.replace(/\+/g, ' ')) : null;
 
     if (nama) {
       document.write(`${nama}`);
