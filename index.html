@@ -1713,11 +1713,9 @@ button {
         </div>
         <div class=
         "name animate__animated animate__fadeInDownBig animate__slow">
-            <script>
-    // Ambil path dari URL, misalnya: https://contoh.com/Wawan
-    const path = window.location.pathname.split('/').filter(Boolean);
-    // Ambil bagian terakhir dari path
-    const nama = path[path.length - 1];
+             <script>
+    // Ambil fragment/hash dari URL, misalnya: https://contoh.com#Wawan
+    const nama = window.location.hash.replace('#', '');
 
     if (nama) {
       document.write(`${nama}`);
